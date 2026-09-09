@@ -1,9 +1,9 @@
 # LoRA Metadata Viewer/Editor
 
-Single file pure HTML tool for viewing and editing LoRA metadata locally on your web browser without the need of installation or internet connectivity.
+Pure HTML/JS tool for viewing and editing LoRA metadata locally on your web browser without the need of installation or internet connectivity.
 
 ## Usage
-No need for prior setup, just open the HTML file with the web browser of your choice and drag a Safetensors file. Alternatively, you can use the version hosted on GitHub through the link provided in the demo section.
+No need for prior setup, just open `index.html` with the web browser of your choice and drag a Safetensors file. Alternatively, you can use the version hosted on GitHub through the link provided in the demo section.
 
 ## Demo
 https://xypher7.github.io/lora-metadata-viewer
@@ -15,18 +15,28 @@ https://xypher7.github.io/lora-metadata-viewer
 - Edit or remove metadata in the Safetensors file
 - Doro :3
 
+## Structure
+The tool is split into small modules under the `js/` and `css/` directories and loaded by `index.html`:
+
+| File | Responsibility |
+|------|----------------|
+| `css/main.css` | Design system, themes, responsive layout |
+| `js/config.js` | Global constants and initial state |
+| `js/utils.js` | Shared helpers (toasts, JSON colorizing, clipboard) |
+| `js/theme.js` | Theme switching (light/dark/custom colors) |
+| `js/settings.js` | LocalStorage settings persistence |
+| `js/hashing.js` | SHA-256 hashing (AutoV2/AutoV3) |
+| `js/safetensors.js` | Safetensors parsing and file rewriting |
+| `js/lookup.js` | CivitAI / Arc En Ciel online lookup |
+| `js/tags.js` | Training tag frequency analysis |
+| `js/summary.js` | Metadata summary rendering |
+| `js/editor.js` | Metadata editor and download |
+| `js/app.js` | Application entry point and wiring |
+
 ## Offline Execution
-The tool is designed to be used offline and processing is entirely done on your browser. However, the following features require fetching some resources on the internet and will not work without internet connectivity:
-- CivitAI data lookup
-- Processing large files (greater than 2GB)
-    - Optionally, if you wish to maintain everything local, you may download the <a name="unique-anchor-name" href='https://cdn.jsdelivr.net/npm/hash-wasm@4/dist/sha256.umd.min.js'>sha256.umd.min.js</a> file, place it in the same directory as the HTML file, and replace this line
-        ```html
-        <script src="https://cdn.jsdelivr.net/npm/hash-wasm@4/dist/sha256.umd.min.js"></script>
-        ```
-        with 
-        ```html
-        <script src="sha256.umd.min.js"></script>
-        ```
+All file processing is done entirely in the browser and works offline, including hash calculation for files of any size (SHA-256 is implemented in pure JavaScript with chunked reading, so no external library is required). The following features require an internet connection and will not work offline:
+- CivitAI / Arc En Ciel data lookup
+- Automatic update check
 
 ## Screenshots
 ![App Screenshot](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/5c3b0f97-d7ff-4c7a-b9c5-d5f176544151/original=true,quality=90/Screenshot%202025-10-01%20195536.jpeg)
