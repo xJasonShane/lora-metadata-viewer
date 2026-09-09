@@ -100,12 +100,12 @@ function initSettingsStorage(){
     if (UI.importSettingsFile.files.length > 0) {
       importLocalStorage(UI.importSettingsFile.files[0]);
       location.reload();
-    }else alert('Please select a file to import.');
+    }else alert('请选择要导入的文件。');
   });
 
   UI.importSettingsFile.addEventListener('change', function() {
       if (UI.importSettingsFile.files.length > 0) UI.importSettingsFileName.textContent = UI.importSettingsFile.files[0].name;
-      else UI.importSettingsFileName.textContent = 'No file chosen';
+      else UI.importSettingsFileName.textContent = '未选择文件';
   });
 
   // Clear local storage and reset defaults

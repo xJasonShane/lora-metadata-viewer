@@ -138,13 +138,13 @@ async function digestHex(buffer) {
 // Files > 2GB: unified chunked single pass with the incremental JS SHA-256.
 async function calculateFileHashes(file) {
   let autov2, autov3, sha256, sha256_autov3;
-  showLoading('Processing...', true);
+  showLoading('正在处理...', true);
   if (file) {
     try {
       const TWO_GB = 2 * 1024 * 1024 * 1024;
       if (file.size > TWO_GB) {
         try {
-          updateLoading('Calculating hashes...');
+          updateLoading('正在计算哈希...');
           const metaSize = await readMetadataSize(file);
           const skip = metaSize + 8; // Offset to skip metadata
           const shaAll = createSHA256();
@@ -173,10 +173,10 @@ async function calculateFileHashes(file) {
           throw new Error('Unable to read the file.');
         }
       } else {
-        updateLoading('Calculating AutoV2 hash...', 25);
+        updateLoading('正在计算 AutoV2 哈希...', 25);
         const buffer = await file.arrayBuffer();
         sha256 = await digestHex(buffer);
-        updateLoading('Calculating AutoV3 hash...', 50);
+        updateLoading('正在计算 AutoV3 哈希...', 50);
         const metaSize = new DataView(buffer.slice(0, 8)).getUint32(0, true);
         const offset = metaSize + 8;
         sha256_autov3 = await digestHex(new Uint8Array(buffer, offset));
@@ -193,7 +193,7 @@ async function calculateFileHashes(file) {
       }
     } catch (error) {
       if (error.message === 'Unable to read the file.')
-        showToast((Object.keys(VARIABLES.fileMetadata).length ? 'Metadata was found, but t' : 'T') + 'here was a problem calculating the hash. The file size may be too large.', null, 'error');
+        showToast((Object.keys(VARIABLES.fileMetadata).length ? '已找到元数据，但计' : '计') + '算哈希时出现问题。文件可能过大。', null, 'error');
     }
   }
   return { sha256, autov2, autov3 };

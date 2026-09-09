@@ -74,13 +74,13 @@ async function downloadFile(purge) {
       try{
         obj && typeof obj === 'string' && JSON.parse(obj);
       }catch(e){
-        showToast(`Error parsing edited metadata field '${name}'. Ensure the field value is a valid JSON string and try again.`, null, 'error');
+        showToast(`解析已编辑的元数据字段 '${name}' 时出错。请确保字段值是有效的 JSON 字符串，然后重试。`, null, 'error');
         throw e;
       }
     };
     !purge && ['ss_dataset_dirs', 'ss_bucket_info', 'ss_tag_frequency'].forEach((f) => { validateJsonString(newMetadata[f], f); });
   } catch (e) {
-    showToast('Error parsing edited metadata. Ensure the metadata is in valid JSON format and try again.', null, 'error');
+    showToast('解析已编辑的元数据时出错。请确保元数据是有效的 JSON 格式，然后重试。', null, 'error');
     return;
   }
   try {
@@ -92,9 +92,9 @@ async function downloadFile(purge) {
     downloadLink.download = VARIABLES.safetensorsFile.name.replace(/(\.[^.]+)$/, `_${purge ? "purged" : "edited"}$1`);
     downloadLink.click();
     URL.revokeObjectURL(url);
-    showToast(`Metadata ${purge ? "purged" : "updated"} successfully!`, null, 'success');
+    showToast(`元数据${purge ? "清除" : "更新"}成功！`, null, 'success');
   } catch (error) {
-    showToast(`An error occured while updating the file:<br>${error}`, null, 'error');
+    showToast(`更新文件时发生错误：<br>${error}`, null, 'error');
     console.error(error);
   } finally {
     setEditorBusy(false);
@@ -122,7 +122,7 @@ function setCustomMetadata(){
                   catch(e) {
                     if(obj.showError){
                       console.warn(`Error evaluating expression for custom field "${obj.label}".`, obj, e);
-                      showToast(`Error evaluating expression for custom field "${obj.label}":<br>${e.message}`, null, 'error');
+                      showToast(`计算自定义字段 "${obj.label}" 的表达式时出错：<br>${e.message}`, null, 'error');
                     }
                   }
                   VARIABLES.customMetadata[obj.label] = acc[obj.label];

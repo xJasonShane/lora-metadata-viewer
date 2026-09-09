@@ -90,7 +90,7 @@ const tagTools = {
       const keys = Object.keys(tags);
       const prompts = {};
       if(typeof tags[keys[0]] !== 'object')
-        prompts.Prompt = Object.keys(tags).join(', ');
+        prompts.提示词 = Object.keys(tags).join(', ');
       else
         for (let property in tags)
           if (tags.hasOwnProperty(property))
@@ -136,8 +136,8 @@ function updateTagFrequency(data, suggestedPrompt=false){
       case 'exact': excludeRegex = tagTools.listToRegex(excludeFilter.value, true); break;
       case 'partial': excludeRegex = tagTools.listToRegex(excludeFilter.value); break;
     }
-    filterVld.innerHTML = !tagTools.isValidRegex(includeRegex) ? 'Invalid regex!' : '';
-    excludeFilterVld.innerHTML = !tagTools.isValidRegex(excludeRegex) ? 'Invalid regex!' : '';
+    filterVld.innerHTML = !tagTools.isValidRegex(includeRegex) ? '正则表达式无效！' : '';
+    excludeFilterVld.innerHTML = !tagTools.isValidRegex(excludeRegex) ? '正则表达式无效！' : '';
     if(!tagTools.isValidRegex(includeRegex)) includeRegex = '';
     if(!tagTools.isValidRegex(excludeRegex)) excludeRegex = '';
     if(byFolder.checked) {

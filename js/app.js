@@ -242,13 +242,13 @@ async function handleFile(file) {
     return;
   }
   if (!file.name.endsWith('.safetensors')) {
-    showToast('Please drop a valid .safetensors file.', null, 'error');
+    showToast('请拖入有效的 .safetensors 文件。', null, 'error');
     return;
   }
   try {
     const { metadata, formattedMetadata } = await parseSafetensors(file);
     if (!formattedMetadata) {
-      showToast('No metadata found', null, 'warning');
+      showToast('未找到元数据', null, 'warning');
     }
     VARIABLES.fileMetadata = metadata;
     updateMetadataEditor(formattedMetadata);
@@ -260,7 +260,7 @@ async function handleFile(file) {
     await calculateFileHashes(file);
     updateOnlineLookupInfo();
   } catch (error) {
-    showToast(`Error parsing metadata:<br>${error}`, null, 'error');
+    showToast(`解析元数据时出错：<br>${error}`, null, 'error');
     console.error('Error reading file:', error);
   }
 }
@@ -345,7 +345,7 @@ async function checkForUpdates() {
     const versions = tags.map(tag => tag.name).sort((a, b) => compareVersions(b, a));
     const isLatest = compareVersions(UI.appVersion.innerHTML, versions[0]) >= 0;
     const latest = versions[0];
-    if (!isLatest) showToast(`New version available: <a href="https://github.com/Xypher7/lora-metadata-viewer" target='_blank'>${latest}</a>`, null, 'none');
+    if (!isLatest) showToast(`发现新版本：<a href="https://github.com/Xypher7/lora-metadata-viewer" target='_blank'>${latest}</a>`, null, 'none');
   } catch (error) {
     // Update check is best-effort; ignore network failures silently
   }

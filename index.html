@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LoRA Metadata Viewer</title>
+  <title>LoRA 元数据查看器</title>
   <meta charset="UTF-8">
   <link id="favicon" rel="icon" type="image/x-icon" href="data:image/webp;base64,UklGRhQEAABXRUJQVlA4WAoAAAAQAAAAFwAAFwAAQUxQSOcAAAABkGtr27FHd+zKdm3b9iHYRp3KtpNKpdOlsm3bNmbmewY/3jmDiJgA/G9pCw8XE22hRBzr124e7q/Pu2OaR5sd+EmHv5HAv0okeEgk/SQhv/x4OByRsFyTAQDJdmL4CIjEfrK4FUXkG7H8lsXwDyavZqIyD0zoMhDPbKgP64wuUMnoGbYcmyeID3FMDgH3TRZcGyAWyuJeGYDiM9H3Tz7c8SERJePfXKLB7K5/HkZznKqJKIOHwiQXKaL2SURzJmIw5ohaeUDJEUDYI9G4DoDsmz0jXjxFw5deimQAiPqaQHAxZW158AcAVlA4IAYDAACQEgCdASoYABgAAAAAJZACxHzQwNsAo5P2zXLluoHWV+gB0hnkyXLn8AP1J7AbqD6W/rzoAPpf8o/EP9wP8zpFfxZ/Zn/d7YB+GfqQfFP5X+Of5GbAx/K/xc4gD2AP4B/RP4B+rv+A9wL9V8AD+k/kB9AH8I/h38z/F/+4f9jlCf0lPrKuUSoT2/Sv58f9qt/mKkt2czTroN74uN4AAP5//b80yteOE7EOjoXcALVj/i9Vrd+9KhFotEMz7GtSd/Z/hynF8qbzzm4xXbzBf+6uP1iMormIqovu4sIB0GgsAkmF7gDrR0IRnTHkIAIhlepcjzQuqkqsUC3/UKf7ZmQKsi1NPQ4L8npBsOl5z5XmWEzZFzDGrD7Ie9//fq5XqKuXjDsh/Sxb/gbgy/XKZRnhuxl3G4dnflf/T8wlvtLeP3Tf/03TPKwPXHffvEpqmh//iMYp9Jq63glDYjZ5IA0xq/z4mGiSFHlh3gWUnuVoBzyJTV+To738nKbxQ77nT6dWYzeATn5w9D8wa//XQFf+Gs11w4MMC3/iag/8Nfzrsjwv/sP92EF/v/9cnui6pf6i23xn1lF2cd/v6x3bmUhCmbYm4BguDlXOmZFUnvdMaN0PYPuMZja8/5CteZ1oLrbEc8VS3Tl4FULGa+pfgtQ8gA2hdctrnQheR370RzIf/MHlAgKL3XvUdI8m8PLeXXDQYS+ebpjH95qlBh3XM2LMoaEBR5xh+Sw5UKlr5laqCeb8sAafvXE8YL8yTEigjkaU5N/jHGVlkkSHOllZu6JSbTdyyKlp+c3UqDkyaMt+BNzmK3I/uKsPkJHBLv5UBaon7JGxMYDTsbTm/1/L8A9bZy/f//NHwv/0hamZddrxz3N3DX2tKaTzBS9procNdLg3wzHulnK5yv/5Vmy3iAVgrX3BFInXPa+cgni7lACSPEal5Lg9PzqeiG9RIO0/M+OI6SBpEh/pJNGwUgTwX+vCRri7Gmav4+Y0gZncYMc/kDMcZh8tcqXpiG2e/quSbcFE7FYQAAA=">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="dark-theme">
   <div class="header">
-    LoRA Metadata Viewer
+    LoRA 元数据查看器
     <doro-doro></doro-doro>
   </div>
   <hr/>
@@ -17,125 +17,125 @@
   <div class="body-content">
     <div id="settings-panel" class="content">
       <div class="tab-container">
-          <button class="tablinks" data-target-tab="tab0">General</button>
-          <button class="tablinks" data-target-tab="tab1">Display</button>
-          <button class="tablinks" data-target-tab="tab2">Summary</button>
-          <button class="tablinks" data-target-tab="tab3">Metadata Editor</button>
-          <button class="tablinks" data-target-tab="tab4">Custom Fields</button>
-          <button class="tablinks" data-target-tab="tab5">Online Lookup</button>
+          <button class="tablinks" data-target-tab="tab0">常规</button>
+          <button class="tablinks" data-target-tab="tab1">显示</button>
+          <button class="tablinks" data-target-tab="tab2">摘要</button>
+          <button class="tablinks" data-target-tab="tab3">元数据编辑器</button>
+          <button class="tablinks" data-target-tab="tab4">自定义字段</button>
+          <button class="tablinks" data-target-tab="tab5">在线查询</button>
       
           <div id="tab0" class="tabcontent">
-            <div><input type="checkbox" id="enableUpdateCheck" class="settings-field" checked><label for="enableUpdateCheck">Check for updates</label></div>
-            <div><span class="notes">Settings are stored in your browser through the Local Storage API and will persist across sessions. Use this section to either reset, load, or save your current configuration.</span></div>           
-            <button id="clearSettingsBtn" class="settings-button">Restore Default Settings</button>
-            <button id="exportSettingsBtn" class="settings-button">Export Settings</button>
-            <button id="importSettingsBtn" class="settings-button">Import Settings</button>
-            <label class="custom-file-upload"><input type="file" id="importSettingsFile">Choose Import File</label>
-            <span id="importSettingsFileName">No file chosen</span>
+            <div><input type="checkbox" id="enableUpdateCheck" class="settings-field" checked><label for="enableUpdateCheck">检查更新</label></div>
+            <div><span class="notes">设置通过浏览器的 Local Storage API 存储在本地，并在不同会话间保留。您可以在此重置、导入或导出当前配置。</span></div>           
+            <button id="clearSettingsBtn" class="settings-button">恢复默认设置</button>
+            <button id="exportSettingsBtn" class="settings-button">导出设置</button>
+            <button id="importSettingsBtn" class="settings-button">导入设置</button>
+            <label class="custom-file-upload"><input type="file" id="importSettingsFile">选择导入文件</label>
+            <span id="importSettingsFileName">未选择文件</span>
           </div>
           <div id="tab1" class="tabcontent">
-            <div class="section-header boom">Display Settings</div>
+            <div class="section-header boom">显示设置</div>
             <hr>
             <div id="settings-panel-display">
               <span>
-                <label for="themeSelect">Theme: </label>
+                <label for="themeSelect">主题：</label>
                 <select id="themeSelect" class="settings-field">
-                  <option value="default" selected>Default</option>
-                  <option value="light-theme">Light</option>
-                  <option value="dark-theme">Dark</option>
-                  <option value="console-theme">Hackerman</option>
+                  <option value="default" selected>默认</option>
+                  <option value="light-theme">浅色</option>
+                  <option value="dark-theme">深色</option>
+                  <option value="console-theme">黑客风</option>
                   <option value="doro-theme">:3</option>
                 </select>
               </span>
               <span>
-                <label for="themeColorSelect">Color: </label>
+                <label for="themeColorSelect">颜色：</label>
                 <select id="themeColorSelect" class="settings-field">
-                  <option value="default" selected>Default</option>
-                  <option value="amber-theme">Amber</option>
-                  <option value="blue-theme">Blue</option>
-                  <option value="lightblue-theme">Blue (Light)</option>
-                  <option value="cyan-theme">Cyan</option>
-                  <option value="green-theme">Green</option>
-                  <option value="lightgreen-theme">Green (Light)</option>
-                  <option value="magenta-theme">Magenta</option>
-                  <option value="orange-theme">Orange</option>
-                  <option value="red-theme">Red</option>
-                  <option value="pink-theme">Pink</option>
-                  <option value="purple-theme">Purple</option>
-                  <option value="teal-theme">Teal</option>
-                  <option value="yellow-theme">Yellow</option>
-                  <option value="custom-theme">Custom</option>
+                  <option value="default" selected>默认</option>
+                  <option value="amber-theme">琥珀色</option>
+                  <option value="blue-theme">蓝色</option>
+                  <option value="lightblue-theme">浅蓝</option>
+                  <option value="cyan-theme">青色</option>
+                  <option value="green-theme">绿色</option>
+                  <option value="lightgreen-theme">浅绿</option>
+                  <option value="magenta-theme">品红</option>
+                  <option value="orange-theme">橙色</option>
+                  <option value="red-theme">红色</option>
+                  <option value="pink-theme">粉色</option>
+                  <option value="purple-theme">紫色</option>
+                  <option value="teal-theme">青蓝</option>
+                  <option value="yellow-theme">黄色</option>
+                  <option value="custom-theme">自定义</option>
                 </select>
                 <input id="themeColorPicker" type="color" class="settings-field" value="#888888">
               </span>
               <span>
-                <label for="themeBgColorSelect">Background Color: </label>
+                <label for="themeBgColorSelect">背景颜色：</label>
                 <select id="themeBgColorSelect" class="settings-field">
-                  <option value="" selected>Default</option>
-                  <option value="black">Black</option>
-                  <option value="white">White</option>
-                  <option value="custom-theme">Custom</option>
+                  <option value="" selected>默认</option>
+                  <option value="black">黑色</option>
+                  <option value="white">白色</option>
+                  <option value="custom-theme">自定义</option>
                 </select>
                 <input id="themeBgColorPicker" type="color" class="settings-field" value="#888888">
               </span>
               <span>
-                <label for="themeInputColorSelect">Textbox Color: </label>
+                <label for="themeInputColorSelect">文本框颜色：</label>
                 <select id="themeInputColorSelect" class="settings-field">
-                  <option value="" selected>Default</option>
-                  <option value="black">Black</option>
-                  <option value="white">White</option>
-                  <option value="custom-theme">Custom</option>
+                  <option value="" selected>默认</option>
+                  <option value="black">黑色</option>
+                  <option value="white">白色</option>
+                  <option value="custom-theme">自定义</option>
                 </select>
                 <input id="themeInputColorPicker" type="color" class="settings-field" value="#888888">
               </span>
               <span>
-                <label for="themeFont">Font: </label>
+                <label for="themeFont">字体：</label>
                 <select id="themeFont" class="settings-field">
-                  <option value="">Default</option>
+                  <option value="">默认</option>
                   <option value="Arial, sans-serif">Arial</option>
-                  <option value="cursive">Cursive</option>
-                  <option value="monospace">Monospace</option>
+                  <option value="cursive">手写体</option>
+                  <option value="monospace">等宽字体</option>
                 </select>
               </span>
               <span>
-                <label for="themeFontColorSelect">Font Color: </label>
+                <label for="themeFontColorSelect">字体颜色：</label>
                 <select id="themeFontColorSelect" class="settings-field">
-                  <option value="" selected>Default</option>
-                  <option value="black">Black</option>
-                  <option value="white">White</option>
-                  <option value="#ffc400">Amber</option>
-                  <option value="#4369fe">Blue</option>
-                  <option value="#50c7ff">Blue (Light)</option>
-                  <option value="#00cccc">Cyan</option>
-                  <option value="#22c92a">Green</option>
-                  <option value="#97c922">Green (Light)</option>
-                  <option value="#ff307f">Magenta</option>
-                  <option value="#ff8800">Orange</option>
-                  <option value="#c90000">Red</option>
-                  <option value="#ffa3cb">Pink</option>
-                  <option value="#983cc3">Purple</option>
-                  <option value="#00ac95">Teal</option>
-                  <option value="#ffee00">Yellow</option>
-                  <option value="custom-theme">Custom</option>
+                  <option value="" selected>默认</option>
+                  <option value="black">黑色</option>
+                  <option value="white">白色</option>
+                  <option value="#ffc400">琥珀色</option>
+                  <option value="#4369fe">蓝色</option>
+                  <option value="#50c7ff">浅蓝</option>
+                  <option value="#00cccc">青色</option>
+                  <option value="#22c92a">绿色</option>
+                  <option value="#97c922">浅绿</option>
+                  <option value="#ff307f">品红</option>
+                  <option value="#ff8800">橙色</option>
+                  <option value="#c90000">红色</option>
+                  <option value="#ffa3cb">粉色</option>
+                  <option value="#983cc3">紫色</option>
+                  <option value="#00ac95">青蓝</option>
+                  <option value="#ffee00">黄色</option>
+                  <option value="custom-theme">自定义</option>
                 </select>
                 <input id="themeFontColorPicker" type="color" class="settings-field" value="#888888">
               </span>
             </div>
             <hr>
-            <div><input type="checkbox" id="enableSummary" class="settings-field" data-display="summaryPanel" checked><label for="enableSummary">Display Summary</label></div>
-            <div><input type="checkbox" id="enableOnlineLookup" class="settings-field" data-display="onlineLookupPanel" checked><label for="enableOnlineLookup">Display Online Lookup Info</label></div>
-            <div><input type="checkbox" id="enableSuggestedPrompt" class="settings-field" data-display="suggestedPromptPanel" checked><label for="enableSuggestedPrompt">Display Suggested Prompt</label></div>
-            <div><input type="checkbox" id="enableTagFrequency" class="settings-field" data-display="tagFrequencyPanel" checked><label for="enableTagFrequency">Display Tag Frequency</label></div>
-            <div><input type="checkbox" id="enableMetadata" class="settings-field" data-display="metadataPanel" checked><label for="enableMetadata">Display Metadata</label></div>
-            <div><input type="checkbox" id="enableMetadataEditor" class="settings-field" data-display="metadataEditorPanel" checked><label for="enableMetadataEditor">Display Metadata Editor</label></div>
+            <div><input type="checkbox" id="enableSummary" class="settings-field" data-display="summaryPanel" checked><label for="enableSummary">显示摘要</label></div>
+            <div><input type="checkbox" id="enableOnlineLookup" class="settings-field" data-display="onlineLookupPanel" checked><label for="enableOnlineLookup">显示在线查询信息</label></div>
+            <div><input type="checkbox" id="enableSuggestedPrompt" class="settings-field" data-display="suggestedPromptPanel" checked><label for="enableSuggestedPrompt">显示建议提示词</label></div>
+            <div><input type="checkbox" id="enableTagFrequency" class="settings-field" data-display="tagFrequencyPanel" checked><label for="enableTagFrequency">显示标签频率</label></div>
+            <div><input type="checkbox" id="enableMetadata" class="settings-field" data-display="metadataPanel" checked><label for="enableMetadata">显示元数据</label></div>
+            <div><input type="checkbox" id="enableMetadataEditor" class="settings-field" data-display="metadataEditorPanel" checked><label for="enableMetadataEditor">显示元数据编辑器</label></div>
           </div>
           <div id="tab2" class="tabcontent">
-            <div><input type="checkbox" id="showUndefinedSummaryValues" class="settings-field" checked><label class="section-header" for="showUndefinedSummaryValues">Show undefined summary values</label></div>
+            <div><input type="checkbox" id="showUndefinedSummaryValues" class="settings-field" checked><label class="section-header" for="showUndefinedSummaryValues">显示未定义的摘要值</label></div>
             <hr>
-            <div><span class="section-header">Summary Fields</span><br><span class="notes">Specify the name of the fields to be displayed in the summary section, separated by commas. To include fields from the CivitAI metadata, add "civitai." prefix (ie. "civitai.trainedWords"). To include custom fields, add "custom." prefix (ie. "custom.training_time").</span></div>
+            <div><span class="section-header">摘要字段</span><br><span class="notes">指定要在摘要部分显示的字段名称，用逗号分隔。要包含 CivitAI 元数据中的字段，请添加 "civitai." 前缀（例如 "civitai.trainedWords"）。要包含自定义字段，请添加 "custom." 前缀（例如 "custom.training_time"）。</span></div>
             <textarea id="summaryFields" class="settings-field" rows="8" cols="100" spellcheck="false"></textarea>
             <hr>
-            <div><span class="section-header">Custom Summary Template</span><br><span class="notes">This section defines the template to be used in the custom summary layout in HTML format. The fields to be displayed must be defined within {{}}. ( ie: {{ss_output_name}} ). To include file metadata fields, simply specify the field name. To include fields from the CivitAI metadata, add "civitai." prefix (ie. "civitai.trainedWords"). To include custom fields, add "custom." prefix (ie. "custom.training_time").</span></div>
+            <div><span class="section-header">自定义摘要模板</span><br><span class="notes">此部分定义用于自定义摘要布局的模板，格式为 HTML。要显示的字段必须定义在 {{}} 中（例如：{{ss_output_name}}）。要包含文件元数据字段，直接指定字段名称即可。要包含 CivitAI 元数据中的字段，请添加 "civitai." 前缀（例如 "civitai.trainedWords"）。要包含自定义字段，请添加 "custom." 前缀（例如 "custom.training_time"）。</span></div>
             <textarea id="customTemplate" spellcheck="false" class="settings-field" rows="60" cols="100">
               <style>
                 .tile { display: flex; flex-direction: column; margin: 10px; overflow-wrap: anywhere; } 
@@ -147,12 +147,12 @@
               </style>
               <div class="custom-grid" style="display: flex; font-size: 20px;">
                 <div class="tile" style="max-width: 320px; min-width: 320px;">
-                  <div>Model</div>
+                  <div>模型</div>
                   <div>{{custom.link}}</div>
                   <div style="font-size: 0.8em;">{{custom.title?}}</div>
                   <div class="null">{{custom.preview}}</div>
                   <div style="max-height: 42px;">
-                    <div>Creator</div>
+                    <div>创作者</div>
                     <div>{{custom.creator}}</div>
                   </div>
                   <div>
@@ -164,7 +164,7 @@
                     <div>{{custom.autov3}}</div>
                   </div>
                   <div>
-                    <div>Base Model</div>
+                    <div>基础模型</div>
                     <div>{{custom.base_model_url}}</div>
                   </div>
                   <div>
@@ -174,81 +174,81 @@
                 </div>
                 <div class="custom-grid" style="display: flex; flex-wrap: wrap;">
                   <div class="tile">
-                    <div>General</div>
+                    <div>常规</div>
                     <div>
-                      <div>Prediction Type</div>
+                      <div>预测类型</div>
                       <div>{{modelspec.prediction_type}}</div>
                     </div>
                     <div>
-                      <div>Batch</div>
+                      <div>批大小</div>
                       <div>{{custom.batch_size}}</div>
                     </div>
                     <div>
-                      <div>Gradient Acc. Steps</div>
+                      <div>梯度累积步数</div>
                       <div>{{custom.gradient_accumulation}}</div>
                     </div>
                     <div>
-                      <div>Resolution</div>
+                      <div>分辨率</div>
                       <div>{{custom.resolution}}</div>
                     </div>
                     <div>
-                      <div>Clip Skip</div>
+                      <div>Clip 跳过</div>
                       <div>{{ss_clip_skip}}</div>
                     </div>
                     <div>
-                      <div>Epoch</div>
-                      <div>{{ss_epoch}} of {{ss_num_epochs}}</div>
+                      <div>轮次</div>
+                      <div>{{ss_epoch}} / {{ss_num_epochs}}</div>
                     </div>
                     <div>
-                      <div>Steps</div>
-                      <div>{{ss_steps}} of {{ss_max_train_steps}}</div>
+                      <div>步数</div>
+                      <div>{{ss_steps}} / {{ss_max_train_steps}}</div>
                     </div>
                   </div>
                   <div class="tile">
-                    <div>Network</div>
+                    <div>网络</div>
                     <div>
-                      <div>Module</div>
+                      <div>模块</div>
                       <div>{{ss_network_module}}</div>
                     </div>
                     <div>
-                      <div>Algorithm</div>
+                      <div>算法</div>
                       <div>{{custom.algo_dora}}</div>
                     </div>
                     <div>
-                      <div>Dim / Alpha</div>
+                      <div>维度 / Alpha</div>
                       <div class="number">{{ss_network_dim}} / {{ss_network_alpha}}</div>
                     </div>
                     <div>
-                      <div>Conv Dim / Alpha</div>
+                      <div>卷积维度 / Alpha</div>
                       <div class="number">{{custom.conv_dim}} / {{custom.conv_alpha}}</div>
                     </div>
                     <div>
-                      <div>Network Dropout</div>
+                      <div>网络 Dropout</div>
                       <div>{{ss_network_dropout}}</div>
                     </div>
                     <div>
-                      <div>IP Noise Gamma</div>
+                      <div>IP 噪声 Gamma</div>
                       <div>{{ss_ip_noise_gamma}}</div>
                     </div>
                   </div>
                   <div class="tile">
-                    <div>Optimizer</div>
+                    <div>优化器</div>
                     <div>
-                      <div>Type</div>
+                      <div>类型</div>
                       <div>{{custom.optimizer}}</div>
                     </div>
                     <div>
-                      <div>Scheduler</div>
+                      <div>调度器</div>
                       <div>{{ss_lr_scheduler}}</div>
                     </div>
                     <div>
-                      <div>Learning Rates</div>
-                      <div>LR: {{ss_learning_rate}}</div>
-                      <div>TE: {{ss_text_encoder_lr}}</div>
-                      <div>UNET: {{ss_unet_lr}}</div>
+                      <div>学习率</div>
+                      <div>LR：{{ss_learning_rate}}</div>
+                      <div>TE：{{ss_text_encoder_lr}}</div>
+                      <div>UNET：{{ss_unet_lr}}</div>
                     </div>
                     <div>
-                      <div>Optional Args</div>
+                      <div>可选参数</div>
                       <div style="font-size: 12px;">{{custom.optimizer_args}}</div>
                     </div>
                     <div>
@@ -256,57 +256,57 @@
                       <div>{{ss_min_snr_gamma}}</div>
                     </div>
                     <div>
-                      <div>Warmup Steps</div>
+                      <div>预热步数</div>
                       <div>{{ss_lr_warmup_steps}}</div>
                     </div>
                   </div>
                   <div class="tile">
-                    <div>Noise Offset</div>
+                    <div>噪声偏移</div>
                     <div>
-                      <div>Noise Offset</div>
+                      <div>噪声偏移</div>
                       <div>{{ss_noise_offset}}</div>
                     </div>
                     <div>
-                      <div>Pyramid Noise Iterations</div>
+                      <div>金字塔噪声迭代</div>
                       <div>{{ss_multires_noise_iterations}}</div>
                     </div>
                     <div>
-                      <div>Discount</div>
+                      <div>折扣</div>
                       <div>{{ss_multires_noise_discount}}</div>
                     </div>
                   </div>
                   <div class="tile">
-                    <div>Training Info</div>
+                    <div>训练信息</div>
                     <div>
-                      <div>Train Date</div>
+                      <div>训练日期</div>
                       <div>{{custom.training_date}}</div>
                     </div>
                     <div>
-                      <div>Train Time</div>
+                      <div>训练时间</div>
                       <div>{{custom.training_time}}</div>
                     </div>
                     <div>
-                      <div>Total Images</div>
+                      <div>总图像数</div>
                       <div>{{custom.training_images}}</div>
                     </div>
                     <div>
-                      <div>Dataset</div>
+                      <div>数据集</div>
                       <div style="font-size: 12px;">{{ss_dataset_dirs}}</div>
                     </div>
                   </div>
                   <div class="break"></div>
                   <div class="tile">
-                    <div>Suggested Prompt</div>
+                    <div>建议提示词</div>
                     <div id="dashboardSuggestedPrompt" class="prompt">{{custom.suggested_prompt?}}</div>
                   </div>
                   <div class="break"></div>
                   <div class="tile">
-                    <div>Trigger Words ({{custom.lookup_source?}})</div>
+                    <div>触发词 ({{custom.lookup_source?}})</div>
                     <div id="triggerWordsPrompt" class="prompt">{{custom.trigger_words?}}</div>
                   </div>
                   <div class="break"></div>
                   <div class="tile">
-                    <div>Training Comment</div>
+                    <div>训练评论</div>
                     <div>{{ss_training_comment}}</div>
                   </div>
                 </div>
@@ -315,69 +315,69 @@
             </textarea>
           </div>
           <div id="tab3" class="tabcontent">
-            <div><span class="section-header">Metadata Editor Fields</span><br><span class="notes">Specify the name of the fields to be displayed in the simple view of the metadata editor section, separated by commas.</span></div>
+            <div><span class="section-header">元数据编辑器字段</span><br><span class="notes">指定要在元数据编辑器简单视图中显示的字段名称，用逗号分隔。</span></div>
             <textarea id="editorFields" class="settings-field" rows="8" cols="100" spellcheck="false"></textarea>
           </div>
           <div id="tab4" class="tabcontent">
-            <div><span class="section-header">Custom Fields</span><br><span class="notes">This section defines the list of custom fields that may be displayed in the summary section. Calculations are defined as javascript expressions. Data from the following are available for calculations: Safetensors File metadata (fileMetadata), CivitAI resource info (civitaiMetadata), and previously defined custom fields (customMetadata). Keep in mind that custom fields are created in the same order they are defined in the list, meaning you may use a custom field in a calculation only if it was defined in a previous row.</span></div>
+            <div><span class="section-header">自定义字段</span><br><span class="notes">此部分定义可在摘要部分显示的自定义字段列表。计算定义为 JavaScript 表达式。计算中可使用以下数据：Safetensors 文件元数据（fileMetadata）、CivitAI 资源信息（civitaiMetadata）以及先前定义的自定义字段（customMetadata）。请注意，自定义字段按列表中定义的顺序创建，这意味着只有在前面行中已定义的自定义字段才能在计算中使用。</span></div>
             <table class="editable-list">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Calculation</th>
+                  <th>名称</th>
+                  <th>计算</th>
                   <th>&nbsp;</th>
                 </tr>
               </thead>
               <tbody id="editableList" data-list-template="listItemTemplate"></tbody>
               <template id="listItemTemplate">
                 <tr class="list-item">
-                  <td><input name="label" type="text" class="label-input" placeholder="Enter label" spellcheck="false" value="{{label}}"></td>
-                  <td><textarea name="calc" class="calculation-input" rows="3" cols="100" placeholder="Enter calculation" spellcheck="false" >{{calc}}</textarea></td>
+                  <td><input name="label" type="text" class="label-input" placeholder="输入标签" spellcheck="false" value="{{label}}"></td>
+                  <td><textarea name="calc" class="calculation-input" rows="3" cols="100" placeholder="输入计算" spellcheck="false" >{{calc}}</textarea></td>
                   <td><button class="settings-button" onclick="removeListItem(this)">X</button></td>
                 </tr>
               </template>
             </table>
-            <button class="settings-button" onclick="addListItem('editableList','listItemTemplate')">Add Custom Field</button>
-            <button class="settings-button" onclick="$('customFields').dispatchEvent(new Event('input', { bubbles: true, cancelable: true }))">Save Custom Field Changes</button>
+            <button class="settings-button" onclick="addListItem('editableList','listItemTemplate')">添加自定义字段</button>
+            <button class="settings-button" onclick="$('customFields').dispatchEvent(new Event('input', { bubbles: true, cancelable: true }))">保存自定义字段更改</button>
             <textarea id="customFields" class="settings-field" style="display: none;" rows="12" spellcheck="false" data-editable-list="editableList"></textarea>      
           </div>
           <div id="tab5" class="tabcontent">
-            <div><span class="section-header">Resource Lookup</span></div>
+            <div><span class="section-header">资源查询</span></div>
             <div>
               <div>
-                <label for="primaryLookup"><span>Primary Lookup</span></label>
+                <label for="primaryLookup"><span>主要查询</span></label>
                 <select id="primaryLookup" class="settings-field" data-select-toggle>
-                  <option>Disabled</option>
+                  <option>禁用</option>
                   <option value="civ">CivitAI</option>
                   <option value="aec">Arc En Ciel</option>
                 </select>
                 </select>
-                <label for="secondaryLookup"><span>Secondary Lookup</span></label>
+                <label for="secondaryLookup"><span>次要查询</span></label>
                 <select id="secondaryLookup" class="settings-field" data-select-toggle>
-                  <option>Disabled</option>
+                  <option>禁用</option>
                   <option value="civ">CivitAI</option>
                   <option value="aec">Arc En Ciel</option>
                 </select>
               </div>
             </div>
             <hr>
-            <div><span class="section-header">HTTP Proxy</span></div>
-            <div><input type="checkbox" id="enableProxy" class="settings-field" checked><label for="enableProxy">Use HTTP Proxy for Arc En Ciel resource lookup</label></div>
-            <div class="notes">Required for Arc En Ciel resource lookup due to site security restrictions. If enabled, requests to Arc En Ciel will be routed through the proxy URL.</div>
+            <div><span class="section-header">HTTP 代理</span></div>
+            <div><input type="checkbox" id="enableProxy" class="settings-field" checked><label for="enableProxy">对 Arc En Ciel 资源查询使用 HTTP 代理</label></div>
+            <div class="notes">由于网站安全限制，Arc En Ciel 资源查询需要此设置。启用后，对 Arc En Ciel 的请求将通过代理 URL 转发。</div>
             <br>
             <div>
-              <label for="proxyUrl"><span>Proxy URL</span></label>
+              <label for="proxyUrl"><span>代理 URL</span></label>
               <input type="text" id="proxyUrl" class="settings-field" style="width: -webkit-fill-available;">
             </div>
             <br>
             <div>
-              <div class="collapsible" data-target="local-proxy-panel">Local HTTP Proxy (Optional)</div>
+              <div class="collapsible" data-target="local-proxy-panel">本地 HTTP 代理（可选）</div>
               <div id="local-proxy-panel">
-                <div class="notes">Alternatively, a proxy web server may be hosted locally with the following minimal python script. To run the proxy locally, download/copy the following 'proxy.py' python script, place the file in the same folder as this application's .html file, and execute the script with the following command <u class="key copyable-item">python proxy.py --port 8008</u> . Running the command will launch the app at <u class="key copyable-item">http://localhost:8008</u>. Replace the "Proxy URL" setting above with <u class="key copyable-item">http://localhost:8008/?url=</u> to use the local instance.</div>
+                <div class="notes">或者，也可以使用以下最小 Python 脚本在本地托管代理 Web 服务器。要在本地运行代理，请下载/复制以下 'proxy.py' Python 脚本，将文件放在与此应用程序的 .html 文件相同的文件夹中，并使用以下命令执行脚本 <u class="key copyable-item">python proxy.py --port 8008</u>。运行该命令将在 <u class="key copyable-item">http://localhost:8008</u> 启动应用程序。将上面的"代理 URL"设置替换为 <u class="key copyable-item">http://localhost:8008/?url=</u> 即可使用本地实例。</div>
                 <br>
-                <div class="section-header">proxy.py - <a href="#" onclick="downloadProxyScript()">Download</a></div>
+                <div class="section-header">proxy.py - <a href="#" onclick="downloadProxyScript()">下载</a></div>
                 <div id="proxy-script-panel">
-                  <button class="copy-btn" onclick="copyToClipboard('proxyScript',event)">Copy to clipboard</button>
+                  <button class="copy-btn" onclick="copyToClipboard('proxyScript',event)">复制到剪贴板</button>
                   <pre id="proxyScript" class="json-data">
 import http.server
 import socketserver
@@ -450,7 +450,7 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
     </div>
 
     <div id="dropArea" class="drop-area">
-      <p>Drag and drop your safetensors file here </br>or click to select a safetensors file</p>
+      <p>将 safetensors 文件拖放到此处</br>或点击选择 safetensors 文件</p>
       <div>
         <svg class="svg-icon svg-icon-lg" viewBox="0 0 20 20">
           <path fill="none" d="M8.416,3.943l1.12-1.12v9.031c0,0.257,0.208,0.464,0.464,0.464c0.256,0,0.464-0.207,0.464-0.464V2.823l1.12,1.12c0.182,0.182,0.476,0.182,0.656,0c0.182-0.181,0.182-0.475,0-0.656l-1.744-1.745c-0.018-0.081-0.048-0.16-0.112-0.224C10.279,1.214,10.137,1.177,10,1.194c-0.137-0.017-0.279,0.02-0.384,0.125C9.551,1.384,9.518,1.465,9.499,1.548L7.76,3.288c-0.182,0.181-0.182,0.475,0,0.656C7.941,4.125,8.234,4.125,8.416,3.943z M15.569,6.286h-2.32v0.928h2.32c0.512,0,0.928,0.416,0.928,0.928v8.817c0,0.513-0.416,0.929-0.928,0.929H4.432c-0.513,0-0.928-0.416-0.928-0.929V8.142c0-0.513,0.416-0.928,0.928-0.928h2.32V6.286h-2.32c-1.025,0-1.856,0.831-1.856,1.856v8.817c0,1.025,0.832,1.856,1.856,1.856h11.138c1.024,0,1.855-0.831,1.855-1.856V8.142C17.425,7.117,16.594,6.286,15.569,6.286z"></path>
@@ -461,19 +461,19 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
     <div id="notificationPanel"></div>
 
     <div id="summaryPanel">
-      <h3 class="collapsible expanded">Summary</h3>
+      <h3 class="collapsible expanded">摘要</h3>
       <div class="content">
         <div class="panel-option">
-          <label class="section-header" for="summaryFormat">Layout: </label>
+          <label class="section-header" for="summaryFormat">布局：</label>
           <select id="summaryFormat" class="settings-field" data-select-toggle>
             <option value="json">JSON</option>
-            <option value="table">Table</option>
+            <option value="table">表格</option>
             <!-- <option value="grid">Grid</option> -->
-            <option value="custom" selected>Dashboard</option>
+            <option value="custom" selected>仪表盘</option>
           </select>
         </div>
         <div id="summaryJson" data-toggle-target="summaryFormat" data-toggle-value="json">
-          <button class="copy-btn" onclick="copyToClipboard('summary',event)">Copy to clipboard</button>
+          <button class="copy-btn" onclick="copyToClipboard('summary',event)">复制到剪贴板</button>
           <pre id="summary" class="json-data"></pre>
         </div>
         <div id="summaryTable" data-toggle-target="summaryFormat" data-toggle-value="table" class="summary-table"></div>
@@ -490,45 +490,45 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
     </div>
 
     <div id="suggestedPromptPanel">
-      <h3 class="collapsible" data-target="suggested-prompt-content">Suggested Prompt</h3>
+      <h3 class="collapsible" data-target="suggested-prompt-content">建议提示词</h3>
       <div id="suggested-prompt-content" class="content">
         <div id="tag-filter-btn" class="collapsible" data-target="suggested-prompt-settings">⚙</div>
         <div id="suggested-prompt-settings" >
           <table class="summary-table">
             <tr>
-              <td><label for="suggestedPromptCount"><span >Show top N tags</span></label> <span id="suggestedPromptFilterVld" class="error"></span></td>
+              <td><label for="suggestedPromptCount"><span >显示前 N 个标签</span></label> <span id="suggestedPromptFilterVld" class="error"></span></td>
               <td colspan="2"><input type="number" id="suggestedPromptCount" class="settings-field"><span class="note"></span></td>
             </tr>
             <tr>
-              <td><label for="suggestedPromptFilter"><span>Include Filter</span></label></td>
+              <td><label for="suggestedPromptFilter"><span>包含筛选</span></label></td>
               <td>
                 <input type="text" id="suggestedPromptFilter" class="settings-field">
               </td>
               <td>
                 <select id="suggestedPromptFilterMethod" class="settings-field">
-                  <option selected>None/Disable</option>
-                  <option value="partial">Partial Match (comma delimited)</option>
-                  <option value="exact">Exact Match (comma delimited)</option>
-                  <option value="regex">Regular Expression</option>
+                  <option selected>无/禁用</option>
+                  <option value="partial">部分匹配（逗号分隔）</option>
+                  <option value="exact">精确匹配（逗号分隔）</option>
+                  <option value="regex">正则表达式</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td><label for="suggestedPromptExcludeFilter"><span >Exclude Filter</span></label> <span id="suggestedPromptExcludeFilterVld" class="error"></span></td>
+              <td><label for="suggestedPromptExcludeFilter"><span >排除筛选</span></label> <span id="suggestedPromptExcludeFilterVld" class="error"></span></td>
               <td>
                 <input type="text" id="suggestedPromptExcludeFilter" class="settings-field">
               </td>
               <td>
                 <select id="suggestedPromptExcludeFilterMethod" class="settings-field">
-                  <option>None/Disable</option>
-                  <option value="partial">Partial Match (comma delimited)</option>
-                  <option value="exact" selected>Exact Match (comma delimited)</option>
-                  <option value="regex">Regular Expression</option>
+                  <option>无/禁用</option>
+                  <option value="partial">部分匹配（逗号分隔）</option>
+                  <option value="exact" selected>精确匹配（逗号分隔）</option>
+                  <option value="regex">正则表达式</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td colspan="3"><input type="checkbox" id="suggestedPromptByFolder" class="settings-field"><label for="suggestedPromptByFolder">Show prompt by folder</label></td>
+              <td colspan="3"><input type="checkbox" id="suggestedPromptByFolder" class="settings-field"><label for="suggestedPromptByFolder">按文件夹显示提示词</label></td>
             </tr>
           </table>
         </div>
@@ -537,86 +537,86 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
     </div>
 
     <div id="tagFrequencyPanel" >
-      <h3 class="collapsible" data-target="tag-frequency-content">Tag Frequency</h3>
+      <h3 class="collapsible" data-target="tag-frequency-content">标签频率</h3>
       <div id="tag-frequency-content" class="content">
         <div id="tag-filter-btn" class="collapsible" data-target="tag-frequency-settings">⚙</div>
         <div id="tag-frequency-settings" >
           <table class="summary-table">
             <tr>
-              <td><label for="tagFrequencyCount"><span >Show top N tags</span></label> <span id="tagFrequencyFilterVld" class="error"></span></td>
+              <td><label for="tagFrequencyCount"><span >显示前 N 个标签</span></label> <span id="tagFrequencyFilterVld" class="error"></span></td>
               <td colspan="2"><input type="number" id="tagFrequencyCount" class="settings-field"><span class="note"></span></td>
             </tr>
             <tr>
-              <td><label for="tagFrequencyFilter"><span>Include Filter</span></label></td>
+              <td><label for="tagFrequencyFilter"><span>包含筛选</span></label></td>
               <td>
                 <input type="text" id="tagFrequencyFilter" class="settings-field">
               </td>
               <td>
                 <select id="tagFrequencyFilterMethod" class="settings-field">
-                  <option selected>None/Disable</option>
-                  <option value="partial">Partial Match (comma delimited)</option>
-                  <option value="exact">Exact Match (comma delimited)</option>
-                  <option value="regex">Regular Expression</option>
+                  <option selected>无/禁用</option>
+                  <option value="partial">部分匹配（逗号分隔）</option>
+                  <option value="exact">精确匹配（逗号分隔）</option>
+                  <option value="regex">正则表达式</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td><label for="tagExcludeFilter"><span >Exclude Filter</span></label> <span id="tagExcludeFilterVld" class="error"></span></td>
+              <td><label for="tagExcludeFilter"><span >排除筛选</span></label> <span id="tagExcludeFilterVld" class="error"></span></td>
               <td>
                 <input type="text" id="tagExcludeFilter" class="settings-field">
               </td>
               <td>
                 <select id="tagExcludeFilterMethod" class="settings-field">
-                  <option selected>None/Disable</option>
-                  <option value="partial">Partial Match (comma delimited)</option>
-                  <option value="exact">Exact Match (comma delimited)</option>
-                  <option value="regex">Regular Expression</option>
+                  <option selected>无/禁用</option>
+                  <option value="partial">部分匹配（逗号分隔）</option>
+                  <option value="exact">精确匹配（逗号分隔）</option>
+                  <option value="regex">正则表达式</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td colspan="3"><input type="checkbox" id="tagByFolder" class="settings-field"><label for="tagByFolder">Show tags by folder</label></td>
+              <td colspan="3"><input type="checkbox" id="tagByFolder" class="settings-field"><label for="tagByFolder">按文件夹显示标签</label></td>
             </tr>
           </table>
         </div>
-        <button class="copy-btn" onclick="copyToClipboard('keywordDetails',event)">Copy to clipboard</button>
+        <button class="copy-btn" onclick="copyToClipboard('keywordDetails',event)">复制到剪贴板</button>
         <pre id="keywordDetails" class="json-data"></pre>
       </div>
     </div>
 
     <div id="onlineLookupPanel">
-      <h3 class="collapsible">Online Lookup</h3>
+      <h3 class="collapsible">在线查询</h3>
       <div class="content summary-table">
         <table>
-          <tr><td>Model URL:</td><td><a id="modelUrl" target='_blank' href="#"></a></td></tr>
-          <tr><td>Resource Info:</td><td><a id="resourceUrl" target='_blank' href="#"></a></td></tr>
-          <tr><td>Preview:</td><td><span id='previewImage' class="preview-image"></span></td></tr>
+          <tr><td>模型 URL：</td><td><a id="modelUrl" target='_blank' href="#"></a></td></tr>
+          <tr><td>资源信息：</td><td><a id="resourceUrl" target='_blank' href="#"></a></td></tr>
+          <tr><td>预览：</td><td><span id='previewImage' class="preview-image"></span></td></tr>
         </table>
         <div><pre id="onlineLookupData" class="json-data"></div>
       </div>
     </div>
 
     <div id="metadataPanel">
-      <h3 class="collapsible">Metadata</h3>
+      <h3 class="collapsible">元数据</h3>
       <div class="content">
-        <button class="copy-btn" onclick="copyToClipboard('metadataDisplay',event)">Copy to clipboard</button>
+        <button class="copy-btn" onclick="copyToClipboard('metadataDisplay',event)">复制到剪贴板</button>
         <pre id="metadataDisplay" class="json-data"></pre>
       </div>
     </div>
 
     <div id="metadataEditorPanel">
-      <h3 class="collapsible">Metadata Editor</h3>
+      <h3 class="collapsible">元数据编辑器</h3>
       <div class="content">
         <div class="panel-option" >
-          <label class="section-header" for="editorFormat">Layout: </label>
+          <label class="section-header" for="editorFormat">布局：</label>
           <select id="editorFormat" class="settings-field" data-select-toggle>
-            <option value="manual">Manual</option>
-            <option value="simple">Simple</option>
+            <option value="manual">手动</option>
+            <option value="simple">简单</option>
           </select>
         </div>
         <div id="editorHeader" class="editor-header" style="display: none;">
-          <button id="downloadBtn">Update & Download</button>
-          <button id="purgeBtn">Purge & Download</button>
+          <button id="downloadBtn">更新并下载</button>
+          <button id="purgeBtn">清除并下载</button>
         </div>
         <div id="editorNotificationPanel"></div>
         <textarea id="metadataEditor" spellcheck="false" rows="100" cols="100" data-toggle-target="editorFormat" data-toggle-value="manual"></textarea>
@@ -631,7 +631,7 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
 
   <hr/>
   <div class="footer">
-    LoRA Metadata Viewer <span id="appVersion">v1.7</span> |
+    LoRA 元数据查看器 <span id="appVersion">v1.7</span> |
     <a href="https://github.com/Xypher7/lora-metadata-viewer" target='_blank'>GitHub</a> |
     <a href="https://civitai.com/models/249721" target='_blank'>CivitAI</a>
   </div>
@@ -644,7 +644,7 @@ with socketserver.TCPServer(('', PORT), CORSRequestHandler) as httpd:
       <div class="progress-bar"></div>
       <div class="progress-text">0%</div>
     </div>
-    <div><button class="abort settings-button" onclick="abort()">Cancel</button></div>
+    <div><button class="abort settings-button" onclick="abort()">取消</button></div>
   </div>
 
   <!-- Scripts: load order matters. app.js (entry point) must come last. -->

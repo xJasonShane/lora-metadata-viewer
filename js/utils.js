@@ -48,7 +48,7 @@ function createCopyableTextElem(string) {
   elem.className = 'copyable-item';
   elem.addEventListener('click', function(event) {
       navigator.clipboard.writeText(string).then(() => {
-          showTooltip('Copied!', event);
+          showTooltip('已复制！', event);
       }).catch(err => {
           console.error('Failed to copy text: ', err);
       });
@@ -65,7 +65,7 @@ function copyToClipboard(elementId, event) {
   textarea.select();
   document.execCommand('copy');
   document.body.removeChild(textarea);
-  showTooltip('Copied!', event);
+  showTooltip('已复制！', event);
 }
 
 // Colorize a JSON object into syntax-highlighted HTML

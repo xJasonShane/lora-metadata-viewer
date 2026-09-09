@@ -40,7 +40,7 @@ async function onlineLookup(url, useProxy = false) {
     const proxyAvailable = await isProxyAvailable(UI.proxyUrl.value);
     if (proxyAvailable) url = UI.proxyUrl.value + url;
     else {
-      showToast('Proxy server is not available.', null, 'error');
+      showToast('代理服务器不可用。', null, 'error');
       return null;
     }
   }
@@ -76,7 +76,7 @@ async function getCivitAiData(hash) {
     lookupCacheSet(cacheKey, result);
     return result;
   } catch (error) {
-    if (error instanceof TypeError) showToast('CivitAI lookup failed, possibly due to a CORS restriction or network error...', null, 'error');
+    if (error instanceof TypeError) showToast('CivitAI 查询失败，可能是由于 CORS 限制或网络错误...', null, 'error');
     console.error("Error fetching CivitAI data:", error);
     return null;
   }
@@ -96,7 +96,7 @@ async function getArcEnCielData(hash) {
     lookupCacheSet(cacheKey, result);
     return result;
   } catch (error) {
-    if (error instanceof TypeError) showToast('Arc En Ciel lookup failed, possibly due to a CORS restriction or network error. Make sure the HTTP proxy is enabled in the "Online Lookup" settings tab and a valid proxy URL is specified.', null, 'error');
+    if (error instanceof TypeError) showToast('Arc En Ciel 查询失败，可能是由于 CORS 限制或网络错误。请确保在"在线查询"设置选项卡中启用了 HTTP 代理，并指定了有效的代理 URL。', null, 'error');
     console.error("Error fetching Arc En Ciel data:", error);
     return null;
   }
@@ -163,7 +163,7 @@ function applyLookupSideEffects(data) {
     VARIABLES.civitaiMetadata = data.data;
     VARIABLES.customMetadata.lora_hash = data.hash;
     setPreviewFromUrl(data.data?.images?.[0]?.url);
-    showToast('Matching resource found in CivitAI', 8000, 'success');
+    showToast('在 CivitAI 中找到匹配资源', 8000, 'success');
   } else if (data?.source === 'Arc En Ciel') {
     VARIABLES.arcencielMetadata = data.data;
     const versions = data.data?.versions ?? [];
@@ -178,16 +178,16 @@ function applyLookupSideEffects(data) {
       const filePath = selectedVersion?.[mediaType]?.[0]?.filePath;
       if (filePath) setPreviewFromUrl('https://arcenciel.io/uploads/' + filePath);
     }
-    showToast('Matching resource found in Arc En Ciel', 8000, 'success');
+    showToast('在 Arc En Ciel 中找到匹配资源', 8000, 'success');
   } else {
-    showToast('No matching resource found', 8000, 'warning');
+    showToast('未找到匹配资源', 8000, 'warning');
   }
 }
 
 async function updateOnlineLookupInfo() {
   if (!UI.primaryLookup.value) return;
   let data;
-  updateLoading("Model lookup...", 75);
+  updateLoading("正在查询模型...", 75);
 
   const baseModelHash = VARIABLES.fileMetadata.ss_new_sd_model_hash || VARIABLES.fileMetadata.ss_sd_model_hash;
   const vaeHash = VARIABLES.fileMetadata.ss_new_vae_hash || VARIABLES.fileMetadata.ss_vae_hash;
